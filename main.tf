@@ -39,7 +39,7 @@ resource "vantage_cost_report" "aws_last_6_months" {
 # Cost Report 2: AWS / Azure / GCP pie chart
 # -----------------------------------------------------------------------------
 resource "vantage_cost_report" "multi_cloud_pie" {
-  title         = "AWS, Azure & GCP"
+  title         = "Multi-Cloud: AWS, Azure & GCP"
   folder_token  = vantage_folder.terraform_demo_costs.token
   filter        = "costs.provider IN ('aws', 'azure', 'gcp')"
   groupings     = "provider"
@@ -111,7 +111,7 @@ resource "vantage_dashboard" "terraform_demo" {
       }
     },
     {
-      title            = "AWS, Azure & GCP"
+      title            = "Multi-Cloud: AWS, Azure & GCP"
       widgetable_token = vantage_cost_report.multi_cloud_pie.token
       settings = {
         display_type = "chart"
