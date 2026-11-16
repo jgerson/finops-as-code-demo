@@ -8,13 +8,15 @@ Vantage FinOps-as-Code demo for **HCP Terraform** remote runs.
 
 | Resource | Name | Details |
 | --- | --- | --- |
-| Cost folder | Terraform Demo | Holds the four Cost Reports |
+| Cost folder | Terraform Demo | Holds the six Cost Reports |
 | Dashboard folder | Terraform Demo | Holds the dashboard |
 | Cost Report | AWS — Last 6 Months | AWS only, monthly bars, last 6 months |
 | Cost Report | AWS, Azure & GCP | Multi-cloud pie by provider |
-| Cost Report | AI Visibility | OpenAI, Anthropic, Cursor, Amazon Bedrock |
+| Cost Report | AI Visibility | Cursor spend |
 | Cost Report | Snowflake & Databricks | Data platforms by provider/service |
-| Dashboard | Terraform Demo | All four reports as chart widgets |
+| Cost Report | Datadog | Datadog spend by service |
+| Cost Report | GitHub | GitHub spend by service |
+| Dashboard | Terraform Demo | All six reports as chart widgets |
 
 ## HCP Terraform setup
 
