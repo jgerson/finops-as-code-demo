@@ -20,6 +20,8 @@ output "cost_report_tokens" {
     multi_cloud_pie      = vantage_cost_report.multi_cloud_pie.token
     ai_visibility        = vantage_cost_report.ai_visibility.token
     snowflake_databricks = vantage_cost_report.snowflake_databricks.token
+    datadog              = vantage_cost_report.datadog.token
+    github               = vantage_cost_report.github.token
   }
 }
 

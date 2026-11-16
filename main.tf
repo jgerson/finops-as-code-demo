@@ -87,7 +87,41 @@ resource "vantage_cost_report" "snowflake_databricks" {
 }
 
 # -----------------------------------------------------------------------------
-# Dashboard — all four reports under Terraform Demo
+# Cost Report 5: Datadog
+# -----------------------------------------------------------------------------
+resource "vantage_cost_report" "datadog" {
+  title         = "Datadog"
+  folder_token  = vantage_folder.terraform_demo_costs.token
+  filter        = "costs.provider = 'datadog'"
+  groupings     = "service"
+  date_interval = "last_6_months"
+  date_bin      = "month"
+  chart_type    = "bar"
+
+  settings = {
+    show_previous_period = false
+  }
+}
+
+# -----------------------------------------------------------------------------
+# Cost Report 6: GitHub
+# -----------------------------------------------------------------------------
+resource "vantage_cost_report" "github" {
+  title         = "GitHub"
+  folder_token  = vantage_folder.terraform_demo_costs.token
+  filter        = "costs.provider = 'github'"
+  groupings     = "service"
+  date_interval = "last_6_months"
+  date_bin      = "month"
+  chart_type    = "bar"
+
+  settings = {
+    show_previous_period = false
+  }
+}
+
+# -----------------------------------------------------------------------------
+# Dashboard — all six reports under Terraform Demo
 # -----------------------------------------------------------------------------
 resource "vantage_dashboard" "terraform_demo" {
   title           = "Terraform Demo"
@@ -144,6 +178,32 @@ resource "vantage_dashboard" "terraform_demo" {
         grid = {
           x = 6
           y = 4
+          w = 6
+          h = 4
+        }
+      }
+    },
+    {
+      title            = "Datadog"
+      widgetable_token = vantage_cost_report.datadog.token
+      settings = {
+        display_type = "chart"
+        grid = {
+          x = 0
+          y = 8
+          w = 6
+          h = 4
+        }
+      }
+    },
+    {
+      title            = "GitHub"
+      widgetable_token = vantage_cost_report.github.token
+      settings = {
+        display_type = "chart"
+        grid = {
+          x = 6
+          y = 8
           w = 6
           h = 4
         }
