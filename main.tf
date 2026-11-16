@@ -58,7 +58,7 @@ resource "vantage_cost_report" "multi_cloud_pie" {
 resource "vantage_cost_report" "ai_visibility" {
   title         = "AI Visibility"
   folder_token  = vantage_folder.terraform_demo_costs.token
-  filter        = "(costs.provider = 'open_ai') OR (costs.provider = 'anthropic') OR (costs.provider = 'cursor') OR (costs.provider = 'aws' AND costs.service = 'Amazon Bedrock')"
+  filter        = "costs.provider = 'cursor'"
   groupings     = "provider,service"
   date_interval = "last_6_months"
   date_bin      = "month"
