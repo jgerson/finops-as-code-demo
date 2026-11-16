@@ -22,7 +22,7 @@ Vantage FinOps-as-Code demo for **HCP Terraform** remote runs.
 2. Connect this GitHub repo as the VCS source (`jgerson/finops-as-code-demo`), branch `main`.
 3. Set workspace variables:
    - **Env var** `VANTAGE_API_TOKEN` — sensitive — your Vantage API token
-   - Optional **Terraform var** `workspace_token` — pin a Vantage workspace (`wrkspc_...`)
+   - Optional **Terraform var** `workspace_token` — defaults to SE Demo (`wrkspc_2bf7b5b879f886b2`)
 4. Queue a run (or push a commit) and confirm apply.
 
 Optional: uncomment the `cloud {}` block in `versions.tf` with your HCP org/workspace name if you want local CLI runs to use the same remote backend.

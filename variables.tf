@@ -6,7 +6,7 @@ variable "vantage_api_token" {
 }
 
 variable "workspace_token" {
-  description = "Optional workspace token. When empty, the first workspace returned by the API is used."
+  description = "Vantage workspace token. Defaults to SE Demo Workspace."
   type        = string
-  default     = ""
+  default     = "wrkspc_2bf7b5b879f886b2"
 }
