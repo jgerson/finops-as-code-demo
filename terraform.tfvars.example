@@ -1,0 +1,5 @@
+# Optional — leave blank to use VANTAGE_API_TOKEN from the environment.
+# vantage_api_token = "vant_xxxxxxxx"
+
+# Optional — leave blank to use the first workspace returned by the API.
+# workspace_token = "wrkspc_xxxxxxxx"
